@@ -12,6 +12,7 @@ RSpec.describe Project, type: :model do
             expect(project.save).to eq(true)
         end
 
+        #Tests if project must have a description
         it "should have a description" do
             project = Project.new(title: "Title", description: nil)
             expect(project.save).to eq(false)

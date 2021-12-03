@@ -28,6 +28,10 @@ gem 'jbuilder', '~> 2.5'
 # devise for authentication
 gem 'devise'
 
+gem 'bootstrap', '~> 4.6.1'
+gem 'jquery-rails'
+
+
 # Use ActiveStorage variant
 group :production do
   gem 'pg', '~> 0.21' # for Heroku deployment

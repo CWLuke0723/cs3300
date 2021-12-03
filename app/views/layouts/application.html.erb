@@ -10,6 +10,24 @@
   </head>
 
   <body>
+    <nav class="navbar navbar-light bg-light">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="/projects">Portfolio</a>
+        <% if user_signed_in? %>
+          Logged in as: <%= current_user.email %>
+          <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="accountDropDown" data-toggle="dropdown" aria-expanded="false">
+              Account
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="accountDropDown">
+              <li><a class="dropdown-item" href="/projects">Home</a></li>
+              <li><%= link_to 'Profile', edit_user_registration_path, class: "dropdown-item" %></li>
+              <li><%= link_to 'Log out', destroy_user_session_path, method: :delete, class: "dropdown-item" %></li> 
+            </ul>
+          </div>
+        <% end %>
+      </div>
+    </nav>
     <%= yield %>
   </body>
 </html>
